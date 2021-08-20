@@ -3,13 +3,13 @@
 
 int	ft_put_s(t_args *args, va_list ap)
 {
-	int		res;
-	char	*str;
+	int			res;
+	const char	*str;
 
 	(void)args;
-	str = va_arg(ap, char *);
+	str = va_arg(ap, const char *);
 	if (!str)
 		str = "(null)";
 	res = 0;
-	return (res + ft_putstr(str));
+	return (res + ft_putstr((char *)str));
 }

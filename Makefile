@@ -33,7 +33,6 @@ CFLAGS	= -Wall -Wextra -Werror
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
 
 all: $(NAME)
 
@@ -41,8 +40,8 @@ all: $(NAME)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 bonus: $(B_OBJS)
-	@ar rc $(NAME) $(B_OBJS)
-	@ranlib $(NAME)
+	rm -f $(NAME)
+	ar rc $(NAME) $(B_OBJS)
 
 test:
 	$(CC) $(CFLAGS) $(SRC)
