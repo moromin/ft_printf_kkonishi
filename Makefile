@@ -43,9 +43,9 @@ bonus: $(B_OBJS)
 	rm -f $(NAME)
 	ar rc $(NAME) $(B_OBJS)
 
-test:
-	$(CC) $(CFLAGS) $(SRC)
-	./a.out
+test: bonus
+	$(CC) $(CFLAGS) test.c -L. -lftprintf -o test
+	./test
 
 clean:
 	rm -f $(OBJS) $(B_OBJS)

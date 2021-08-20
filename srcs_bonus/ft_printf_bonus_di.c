@@ -30,7 +30,6 @@ int	ft_putdi(int di, t_args *args, int padding, int width)
 	return (res);
 }
 
-// New bonus function
 int	get_di_length(t_args *args, int di, int *padding)
 {
 	int	len;
